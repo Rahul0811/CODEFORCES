@@ -39,7 +39,7 @@ bool check(int arr[],int k,int sum,int n)
 		else if(curr > p)
 		return false;
 	}
-	return true;
+	return true ;
 }
 int32_t main()
 {
