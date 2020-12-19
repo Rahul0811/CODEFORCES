@@ -1,7 +1,6 @@
-
 // Problem: B. Find The Array
 // Contest: Codeforces - Educational Codeforces Round 100 (Rated for Div. 2)
-// URL: https://codeforces.com/contest/1463/problem/B
+// URL: https://codeforces.com/problemset/problem/1463/B
 // Memory Limit: 256 MB
 // Time Limit: 2000 ms
 // Powered by CP Editor (https://github.com/cpeditor/cpeditor)
@@ -38,33 +37,31 @@ int32_t main()
   	{
   		int n;
   		cin>>n;
-  		int arr[n],brr[n],crr[n];
+  		int a[n],b[n],c[n];
   		fi(i,n)
   		{
-  			cin>>arr[i];
-  			brr[i] = arr[i];
-  			crr[i] = arr[i];
+  			cin>>a[i];
+  			b[i] = a[i];
+  			c[i] = a[i];
   		}
-  		for(int i = 0;i < n;i++)
+  		fi(i,n)
   		{
-  			if(i % 2 == 0)
-  			arr[i] = 2;
-  			else if(arr[i] % 2 == 1)
-  			arr[i]++;
-  		}
-  		for(int i = 0;i < n;i++)
-  		{
-  			if(i % 2 == 1)
-  			brr[i] = 2;
-  			else if(brr[i] % 2 == 1)
-  			brr[i]++;
+  			if(i%2 == 0)
+  			a[i] = 1;
+  			else b[i] = 1;
   		}
   		int s1 = 0,s2 = 0;
-  		fi(i,n)s1 += dif(arr[i],crr[i]);
-  		fi(i,n)s2 += dif(brr[i],crr[i]);
+  		fi(i,n)
+  		{
+  			s1 += dif(a[i],c[i]);
+  		}
+  		fi(i,n)
+  		{
+  			s2 += dif(b[i],c[i]);
+  		}
   		if(s1 < s2)
-  		fi(i,n)cout<<arr[i]<<" ";
-  		else fi(i,n)cout<<brr[i]<<" ";
+  		fi(i,n)cout<<a[i]<<" ";
+  		else fi(i,n)cout<<b[i]<<" ";
   		cout<<endl;
   	}
 	return 0;
